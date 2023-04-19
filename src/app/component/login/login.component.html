@@ -7,15 +7,17 @@
     />
   </div>
   <div class="direita-login">
-    <div class="card-login">
+    <form (ngSubmit)="onSubmit()" class="card-login" #form="ngForm">
       <h1>Login</h1>
       <div class="textfield">
-        <input type="text" name="usuario" placeholder="Usuário" />
+        <input class="form-control" type="text" name="login" id="login" placeholder="Usuário" [(ngModel)]="login.login" required/>
       </div>
       <div class="textfield">
-        <input type="password" name="senha" placeholder="Senha" />
+        <input type="password" name="password" placeholder="Senha" [(ngModel)]="login.password" required />
       </div>
-      <button class="btn-login">Entrar</button>
-    </div>
+      <button type="submit" class="btn-login" [disabled]="form.form.invalid">Entrar</button>
+    </form>
+
+    <a class="create-link" routerLink="/createAccount">Criar conta</a>
   </div>
 </div>
