@@ -1,24 +1,28 @@
-<main class="register-container">
-  <form class="form-control">
-    <div class="product-info-container">
-      <div class="product-info">
-        <input type="text" name="" id="" class="input-info" placeholder="Nome do Produto">
-        <input type="text" name="" id="" class="input-info" placeholder="Especificação">
-        <input type="text" name="" id="" class="input-info" placeholder="Fabricante">
-        <input type="text" name="" id="" class="input-info" placeholder="Fornecedor">
-        <input type="text" name="" id="" class="input-info" placeholder="NCM">
-      </div>
-      <div class="product-info">
-        <input type="number" name="" id="" class="input-info" placeholder="Garantia">
-        <input type="text" name="" id="" class="input-info" placeholder="Observações">
-        <input type="number" name="" id="" class="input-info" placeholder="Preço de Custo">
-        <input type="number" name="" id="" class="input-info" placeholder="Preço de Venda">
-        <select name="" id="">
-          <option value="">REVENDA</option>
-          <option value="">INTERNO</option>
-        </select>
-      </div>
-      <button type="submit">Cadastrar Produto</button>
-    </div><!--product-info-container-->
+<main class="container">
+  <h1 class="text-header">Preencha os dados do produto</h1>
+  <form class="form-control container" (ngSubmit)="save()" #form="ngForm">
+        <input type="text" name="productName" class="input-field" [(ngModel)]="productName" placeholder="Nome do Produto" required>
+        <input type="text" name="specification" class="input-field" [(ngModel)]="specification" placeholder="Especificação">
+        <input type="text" name="manufacturer" class="input-field" [(ngModel)]="manufacturer" placeholder="Fabricante">
+        <input type="text" name="supplier" class="input-field" [(ngModel)]="supplier" placeholder="Fornecedor">
+        <input type="text" name="ncm" class="input-field" [(ngModel)]="ncm" placeholder="NCM">
+        <input type="number" name="guarantee" class="input-field" [(ngModel)]="guarantee" placeholder="Garantia (meses)">
+        <input type="text" name="comments" class="input-field" [(ngModel)]="comments" placeholder="Observações">
+        <input type="text" name="costPrice" class="input-field" [(ngModel)]="costPrice" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="Preço de Custo" >
+        <input type="text" name="salePrice" class="input-field" [(ngModel)]="salePrice" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"  placeholder="Preço de Venda">
+
+        <mat-radio-group [(ngModel)]="productType" name="productType">
+          <mat-radio-button value="INTERNO">Uso Interno</mat-radio-button>
+          <mat-radio-button value="REVENDA">Para Revenda</mat-radio-button>
+        </mat-radio-group>
+        <div class="buttons-container">
+          <button type="submit" [disabled]="form.form.invalid" class="waves-effect waves-light btn">Salvar</button>
+          <button routerLink="/" class="waves-effect waves-light red darken-1 btn">Cancelar</button>
+        </div>
+
+
+
   </form><!--form-control-->
+
+
 </main><!--register-container-->

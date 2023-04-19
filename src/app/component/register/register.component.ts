@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -6,12 +7,17 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit{
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router) {}
+
 
 
   ngOnInit(): void {
+
 
   }
 
@@ -45,6 +51,7 @@ export class RegisterComponent implements OnInit{
       next: response => console.log(response),
       error: error => console.log(error)
     })
+    this.router.navigate(['/']);
 
   }
 

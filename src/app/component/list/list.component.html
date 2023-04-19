@@ -1,1 +1,37 @@
-<p>dsadasdasdasdasdas</p>
+<main class="container">
+  <button routerLink="/createProduct" class="waves-effect waves-light btn">Cadastrar Produto</button>
+  <table class="bordered centered highlight table-list">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Especificação</th>
+        <th>Fabricante</th>
+        <th>Fornecedor</th>
+        <th>NCM</th>
+        <th>Garantia (meses)</th>
+        <th>Observações</th>
+        <th>Tipo de produto</th>
+        <th>Preço de Custo</th>
+        <th>Preço de Venda</th>
+        <th>Lucro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <td>{{item.id}}</td>
+        <td>{{item.productName}}</td>
+        <td>{{item.specification}}</td>
+        <td>{{item.manufacturer}}</td>
+        <td>{{item.supplier}}</td>
+        <td>{{item.ncm}}</td>
+        <td>{{item.guarantee}}</td>
+        <td>{{item.comments}}</td>
+        <td>{{item.productType}}</td>
+        <td>{{item.costPrice | currency: 'BRL'}} </td>
+        <td>{{item.salePrice | currency: 'BRL'}}</td>
+        <td>{{item.profit | currency: 'BRL'}}</td>
+      </tr>
+    </tbody>
+  </table><!--table-list-products-->
+</main><!--list-container-->

@@ -1,4 +1,20 @@
-:host {
-  height: 80vh;
+
+body {
+  background-color: #EEEEEE;
+}
+
+.container {
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+.table-list {
+  margin-top: 50px;
+}
+.btn {
+  margin-top: 10px;
 }
