@@ -12,6 +12,13 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './http-interceptors';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +34,21 @@ import { httpInterceptorProviders } from './http-interceptors';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CurrencyMaskModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatTableModule,
+    MatRadioModule
   ],
-  providers: [httpInterceptorProviders],
+  providers: [
+    httpInterceptorProviders,
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'blue' },
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

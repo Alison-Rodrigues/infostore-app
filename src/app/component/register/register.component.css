@@ -1,44 +1,25 @@
-.register-container {
+body {
+  background-color: #EEEEEE;
+}
+
+.container {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 20px;
   align-items: center;
-  background-color: #FB8500;
+  justify-content: center;
 }
-.product-info {
-  margin: 20px 0;
-}
-.input-info {
-  padding: 5px 10px;
-  border-radius: 5px;
-  outline: none;
-  background-color: #023047;
-  color: #EEEEEE;
-  font-size: 1.2rem;
-  width: 200px;
-  height: 50px;
-  border: solid 2px #EEEEEE;
-  margin: 0 10px;
+.form-control.container {
+  max-width: 1000px;
 
 }
-.product-info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn {
+  margin: 20px 10px;
 }
-button {
-  width: 200px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #023047;
-  color: #EEEEEE;
+.text-header {
   text-transform: uppercase;
-  margin-top: 50px;
-  border-radius: 5px;
   font-weight: 700;
-  letter-spacing: 5px;
-  cursor: pointer;
+  color: #454545;
 }
