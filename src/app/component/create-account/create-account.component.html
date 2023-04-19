@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./create-account.component.css">
+  </head>
+  <div class="main">
+    <div class="esquerda-login">
+      <img
+        src="assets/images/logo.svg"
+        class="left-login-image"
+        alt="Logo da empresa 70 e dev"
+      />
+    </div>
+    <div class="direita-login">
+      <form (ngSubmit)="onSubmit()" #form="ngForm" class="card-login">
+        <h1>Registre-se</h1>
+        <div class="textfield">
+          <input type="text" name="login" [(ngModel)]="account.login" placeholder="Usuário" required />
+        </div>
+        <div class="textfield">
+          <input type="password" name="password" [(ngModel)]="account.password" placeholder="Senha" required/>
+        </div>
+        <button type="submit" class="btn-login">Registrar</button>
+      </form>
+    </div>
+  </div>
+</html>
